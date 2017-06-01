@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pageObjectMyStore.Generales.HomePage;
 
 public class LoginPage {
     private static final String LOGIN_PAGE_URL = "…";
@@ -19,13 +20,10 @@ public class LoginPage {
         return this;
     }
 
-//    public HomePage loginAs(String username, String password) {
-//        driver.findElement(USERNAME_INPUT)
-//                .sendKeys(username);
-//        driver.findElement(PASSWORD_INPUT)
-//                .sendKeys(password);
-//        driver.findElement(SIGN_IN_BUTTON)
-//                .click();
-//        return new HomePage(driver);
-//    }
+    public HomePage loginAs(String username, String password) {
+        driver.findElement(USERNAME_INPUT).sendKeys(username);
+        driver.findElement(PASSWORD_INPUT).sendKeys(password);
+        driver.findElement(SIGN_IN_BUTTON).click();
+        return new HomePage(driver);
+    }
 }
